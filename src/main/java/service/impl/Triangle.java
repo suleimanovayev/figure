@@ -20,18 +20,12 @@ public class Triangle extends Figure implements FigureHeight {
     public double findArea() {
         checkCorrectVariable();
         double p = getHalfPerimeter();
-        return checkVariables() ? 0 :
-                Math.sqrt(p * (p - a) * (p - b) * (p - c));
-    }
-
-    private boolean checkVariables() {
-        return (a == 0 || b == 0 || c == 0);
+        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
 
     @Override
     public double findHeight() {
         checkCorrectVariable();
-        checkVariables();
         return (2 * findArea() / a);
     }
 
